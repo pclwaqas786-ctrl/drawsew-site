@@ -175,7 +175,7 @@ for q, a in faqs:
     with st.expander(q):
         st.write(a)
 
-# ---------- POSTS (40 free digitizing tips) ----------
+# ---------- POSTS (40 free digitizing tips — full feed with images) ----------
 import re
 from pathlib import Path as _Path
 
@@ -191,19 +191,45 @@ def load_posts():
         body = re.sub(r"^\*\*Image:\*\*.*$", "", body, flags=re.M).strip()
         body = re.sub(r"\n-{3,}\n?", "\n", body).strip()
         num = header.split("—")[0].strip()
-        posts.append({"num": num, "title": f"Post {header}", "body": body})
+        date = header.split("—", 1)[1].strip() if "—" in header else ""
+        date = re.sub(r"\(published.*?\)", "", date).strip(" ,")
+        posts.append({"num": num, "date": date, "body": body})
     return posts
+
+@st.cache_data
+def post_img_b64(num):
+    p = _Path(__file__).parent.joinpath("assets", "posts", f"post-{int(num):02d}.jpg")
+    if p.exists():
+        return _b64.b64encode(p.read_bytes()).decode()
+    return ""
 
 st.markdown('<h2 class="sec-title">📝 Digitizing Tips — 40 Free Posts</h2>', unsafe_allow_html=True)
 st.markdown('<p class="sec-sub">One practical embroidery tip every day — same posts we share on social media.</p>', unsafe_allow_html=True)
+
 _posts = load_posts()
-_choice = st.selectbox("Choose a post", [p["title"] for p in _posts], index=0)
-_sel = next(p for p in _posts if p["title"] == _choice)
-_body_html = _sel["body"].replace("\n", "<br>")
-st.markdown(
-    f'<div class="card" style="max-width:720px;margin:0 auto;"><h3>📌 {_sel["title"]}</h3><p>{_body_html}</p></div>',
-    unsafe_allow_html=True,
-)
+for _i in range(0, len(_posts), 2):
+    _cols = st.columns(2)
+    for _j, _col in enumerate(_cols):
+        if _i + _j >= len(_posts):
+            break
+        _p = _posts[_i + _j]
+        _img = post_img_b64(_p["num"])
+        _img_html = (
+            f'<img src="data:image/jpeg;base64,{_img}" alt="DrawSew post {_p["num"]}" '
+            'style="width:100%;border-radius:12px 12px 0 0;display:block;" />'
+            if _img else
+            '<div style="background:linear-gradient(135deg,#0b6e4f,#1db386);color:#fff;'
+            'text-align:center;padding:52px 10px;font-size:2.2rem;border-radius:12px 12px 0 0;">🧵</div>'
+        )
+        _body_html = _p["body"].replace("\n", "<br>")
+        _col.markdown(
+            f'<div class="card" style="padding:0;overflow:hidden;margin-bottom:18px;">'
+            f"{_img_html}"
+            f'<div style="padding:16px 18px;">'
+            f'<p style="color:#0b6e4f;font-weight:700;font-size:0.85rem;margin:0 0 8px 0;">📅 {_p["date"]}</p>'
+            f"<p>{_body_html}</p></div></div>",
+            unsafe_allow_html=True,
+        )
 
 # ---------- CONTACT ----------
 st.markdown(
