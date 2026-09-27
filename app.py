@@ -1,5 +1,6 @@
 """DrawSew — Embroidery Digitizing. Single-page business site (Streamlit)."""
 import streamlit as st
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="DrawSew — Embroidery Digitizing Service | DST, PES Files in 6-12 Hours",
@@ -233,6 +234,100 @@ for _i in range(0, len(_posts), 2):
 
 FB_PAGE = "https://www.facebook.com/profile.php?id=61594911263612"
 CALL_LINK = "tel:+923323167915"
+
+# ---------- AI VOICE ASSISTANT (free, browser-based) ----------
+st.markdown('<h2 class="sec-title">🎤 Talk to Our AI Assistant</h2>', unsafe_allow_html=True)
+st.markdown('<p class="sec-sub">Tap the mic and ask about pricing, turnaround or file formats — Vicky answers instantly, no call charges.</p>', unsafe_allow_html=True)
+
+VOICE_HTML = """
+<div style="max-width:640px;margin:0 auto;background:#fff;border-radius:16px;
+     box-shadow:0 4px 18px rgba(0,0,0,.08);padding:20px;font-family:sans-serif;">
+  <div id="vlog" style="height:220px;overflow-y:auto;border:1px solid #eee;border-radius:10px;
+       padding:12px;margin-bottom:14px;font-size:.92rem;line-height:1.5;background:#fafafa;"></div>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <button id="vmic" style="flex:0 0 auto;background:#0b6e4f;color:#fff;border:none;border-radius:50%;
+            width:64px;height:64px;font-size:1.7rem;cursor:pointer;">🎤</button>
+    <input id="vtext" placeholder="or type your question…" style="flex:1;padding:12px;border:1px solid #ddd;
+           border-radius:10px;font-size:.95rem;" />
+    <button id="vsend" style="background:#0b6e4f;color:#fff;border:none;border-radius:10px;
+            padding:12px 18px;font-size:.95rem;cursor:pointer;">Send</button>
+  </div>
+  <p id="vstatus" style="margin:10px 0 0;color:#0b6e4f;font-size:.85rem;min-height:1.2em;"></p>
+</div>
+<script>
+(function(){
+  var log = document.getElementById('vlog');
+  var status = document.getElementById('vstatus');
+  var mic = document.getElementById('vmic');
+  var txt = document.getElementById('vtext');
+  var send = document.getElementById('vsend');
+  var SYSTEM = "You are Vicky, the friendly AI voice assistant of DrawSew, an embroidery digitizing service. "
+    + "You convert customer logos into machine embroidery files (DST, PES, EXP, JEF, VP3, XXX) in 6-12 hours, "
+    + "starting at $8, first sample FREE. Be warm and brief. ALWAYS reply in 1-2 short spoken sentences, under 40 words. "
+    + "If they want to order, ask them to email drawsew1@gmail.com or WhatsApp +92 332 3167915 with their logo. "
+    + "Never invent prices or make promises beyond the free sample and 6-12 hour turnaround.";
+  function add(who, text){
+    var d = document.createElement('div');
+    d.style.margin = '0 0 8px 0';
+    d.innerHTML = '<b style="color:#0b6e4f">' + who + ':</b> ' + text.replace(/</g,'&lt;');
+    log.appendChild(d); log.scrollTop = log.scrollHeight;
+  }
+  function speak(text){
+    try {
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US'; u.rate = 1;
+      speechSynthesis.speak(u);
+    } catch(e){}
+  }
+  var busy = false;
+  function ask(q){
+    if(!q || busy) return;
+    busy = true;
+    add('You', q);
+    status.textContent = '⏳ Vicky is thinking…';
+    fetch('https://text.pollinations.ai/' + encodeURIComponent(SYSTEM + '\\nCustomer: ' + q + '\\nVicky:') + '?model=openai')
+      .then(function(r){ return r.text(); })
+      .then(function(a){
+        a = (a||'').trim().slice(0, 400) || "Sorry, I didn't catch that. Please ask again!";
+        add('Vicky 🤖', a);
+        status.textContent = '🔊 Vicky is speaking… (tap mic to interrupt)';
+        speak(a);
+        status.textContent = '';
+        busy = false;
+      })
+      .catch(function(){
+        add('Vicky 🤖', "Sorry, I'm having trouble right now. Please email drawsew1@gmail.com — we reply fast!");
+        status.textContent = ''; busy = false;
+      });
+  }
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var rec = null, listening = false;
+  if(SR){
+    rec = new SR(); rec.lang = 'en-US'; rec.interimResults = false; rec.maxAlternatives = 1;
+    rec.onresult = function(e){
+      var t = e.results[0][0].transcript;
+      listening = false; mic.textContent = '🎤'; mic.style.background = '#0b6e4f';
+      ask(t);
+    };
+    rec.onerror = function(){ listening = false; mic.textContent = '🎤'; mic.style.background = '#0b6e4f'; status.textContent = ''; };
+    rec.onend = function(){ if(listening){ listening = false; mic.textContent = '🎤'; mic.style.background = '#0b6e4f'; status.textContent = ''; } };
+  }
+  mic.onclick = function(){
+    if(!rec){ status.textContent = '⚠️ Voice not supported in this browser — please type instead.'; return; }
+    if(listening){ rec.stop(); return; }
+    try{ speechSynthesis.cancel(); }catch(e){}
+    listening = true; mic.textContent = '⏹️'; mic.style.background = '#c0392b';
+    status.textContent = '🎙️ Listening… speak now';
+    try{ rec.start(); }catch(e){ listening = false; mic.textContent = '🎤'; mic.style.background = '#0b6e4f'; }
+  };
+  send.onclick = function(){ ask(txt.value.trim()); txt.value=''; };
+  txt.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ ask(txt.value.trim()); txt.value=''; } });
+  add('Vicky 🤖', "Hi! I'm Vicky, DrawSew's AI assistant. Tap the mic and ask me anything about digitizing!");
+})();
+</script>
+"""
+components.html(VOICE_HTML, height=560)
 
 # ---------- CONTACT ----------
 st.markdown(
