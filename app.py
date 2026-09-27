@@ -83,9 +83,14 @@ header {visibility: hidden;}
 )
 
 # ---------- HERO ----------
+import base64 as _b64
+_logo_b64 = _b64.b64encode(open("assets/drawsew-logo.png", "rb").read()).decode()
 st.markdown(
     f"""
 <div class="hero">
+    <img src="data:image/png;base64,{_logo_b64}" alt="DrawSew logo"
+         style="width:110px;height:110px;border-radius:24px;margin-bottom:14px;
+                box-shadow:0 4px 16px rgba(0,0,0,0.25);background:#fff;" />
     <h1>Your logo, <span class="hl">stitch-ready</span> in 6&ndash;12 hours.</h1>
     <p>Professional embroidery digitizing in Wilcom &amp; Pulse. 800+ logos digitized. First sample free.</p>
     <div class="btnrow">
