@@ -2,7 +2,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="DrawSew — Embroidery Digitizing",
+    page_title="DrawSew — Embroidery Digitizing Service | DST, PES Files in 6-12 Hours",
     page_icon="🧵",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -169,6 +169,36 @@ faqs = [
 for q, a in faqs:
     with st.expander(q):
         st.write(a)
+
+# ---------- POSTS (40 free digitizing tips) ----------
+import re
+from pathlib import Path as _Path
+
+@st.cache_data
+def load_posts():
+    text = _Path(__file__).parent.joinpath("posts.md").read_text(encoding="utf-8")
+    parts = re.split(r"^## POST ", text, flags=re.M)
+    posts = []
+    for p in parts[1:]:
+        lines = p.strip().split("\n")
+        header = lines[0].strip()
+        body = "\n".join(lines[1:]).strip()
+        body = re.sub(r"^\*\*Image:\*\*.*$", "", body, flags=re.M).strip()
+        body = re.sub(r"\n-{3,}\n?", "\n", body).strip()
+        num = header.split("—")[0].strip()
+        posts.append({"num": num, "title": f"Post {header}", "body": body})
+    return posts
+
+st.markdown('<h2 class="sec-title">📝 Digitizing Tips — 40 Free Posts</h2>', unsafe_allow_html=True)
+st.markdown('<p class="sec-sub">One practical embroidery tip every day — same posts we share on social media.</p>', unsafe_allow_html=True)
+_posts = load_posts()
+_choice = st.selectbox("Choose a post", [p["title"] for p in _posts], index=0)
+_sel = next(p for p in _posts if p["title"] == _choice)
+_body_html = _sel["body"].replace("\n", "<br>")
+st.markdown(
+    f'<div class="card" style="max-width:720px;margin:0 auto;"><h3>📌 {_sel["title"]}</h3><p>{_body_html}</p></div>',
+    unsafe_allow_html=True,
+)
 
 # ---------- CONTACT ----------
 st.markdown(
