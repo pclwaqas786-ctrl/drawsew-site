@@ -232,6 +232,7 @@ for _i in range(0, len(_posts), 2):
         )
 
 FB_PAGE = "https://www.facebook.com/profile.php?id=61594911263612"
+CALL_LINK = "tel:+923323167915"
 
 # ---------- CONTACT ----------
 st.markdown(
@@ -242,6 +243,7 @@ st.markdown(
     <div class="btnrow">
         <a class="abtn abtn-w" href="{MAILTO}">{EMAIL}</a>
         <a class="abtn abtn-o" href="{WHATSAPP_LINK}" target="_blank">WhatsApp {WHATSAPP_DISPLAY}</a>
+        <a class="abtn abtn-o" href="{CALL_LINK}">📞 Call {WHATSAPP_DISPLAY}</a>
     </div>
     <p style="margin:26px 0 12px 0;font-size:1rem;">Follow DrawSew</p>
     <div class="btnrow">
