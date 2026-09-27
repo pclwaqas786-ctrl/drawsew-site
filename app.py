@@ -231,6 +231,8 @@ for _i in range(0, len(_posts), 2):
             unsafe_allow_html=True,
         )
 
+FB_PAGE = "https://www.facebook.com/profile.php?id=61594911263612"
+
 # ---------- CONTACT ----------
 st.markdown(
     f"""
@@ -240,6 +242,10 @@ st.markdown(
     <div class="btnrow">
         <a class="abtn abtn-w" href="{MAILTO}">{EMAIL}</a>
         <a class="abtn abtn-o" href="{WHATSAPP_LINK}" target="_blank">WhatsApp {WHATSAPP_DISPLAY}</a>
+    </div>
+    <p style="margin:26px 0 12px 0;font-size:1rem;">Follow DrawSew</p>
+    <div class="btnrow">
+        <a class="abtn abtn-o" href="{FB_PAGE}" target="_blank" style="padding:10px 24px;font-size:0.95rem;">📘 Facebook</a>
     </div>
 </div>
 <div class="footer">© 2026 DrawSew — Elite Draw Sew Digitizing · Vicky, Digitizing Specialist</div>
