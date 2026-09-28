@@ -227,7 +227,6 @@ for _i in range(0, len(_posts), 2):
             f'<div class="card" style="padding:0;overflow:hidden;margin-bottom:18px;">'
             f"{_img_html}"
             f'<div style="padding:16px 18px;">'
-            f'<p style="color:#0b6e4f;font-weight:700;font-size:0.85rem;margin:0 0 8px 0;">📅 {_p["date"]}</p>'
             f"<p>{_body_html}</p></div></div>",
             unsafe_allow_html=True,
         )
