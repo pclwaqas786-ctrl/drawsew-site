@@ -31,4 +31,4 @@ for f in sorted(d.glob("post-*.jpg")):
         img.save(f, "JPEG", quality=72)
         print("resized", f.name)
 EOF
-cd "$SITE" && git add -A -q && git commit -qm "Auto-sync new post images" && git push -q && echo "synced and pushed"
+cd "$SITE" && git add -A && git commit -qm "Auto-sync new post images" && git push -q && echo "synced and pushed"
