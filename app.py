@@ -360,7 +360,7 @@ def _img_b64(name):
 
 _work_items = "".join(
     f'<div class="work-item"><img src="data:image/jpeg;base64,{_img_b64(f"post-{n:02d}.jpg")}" '
-    f'alt="DrawSew digitizing work sample {n}" loading="lazy" />'
+    f'alt="DrawSew design preview {n}" loading="lazy" />'
     f'<div class="work-cap">Design preview</div></div>'
     for n in range(1, 9) if _img_b64(f"post-{n:02d}.jpg")
 )
@@ -368,9 +368,9 @@ st.markdown(
     f"""
 <div class="full work anchor" id="work"><div class="inner">
   <div class="sec-head">
-    <div class="kicker">Selected work</div>
-    <h2>Recent digitizing work.</h2>
-    <p>A sample of designs digitized by our studio. Every file is artwork we prepared for real production.</p>
+    <div class="kicker">Design previews</div>
+    <h2>Digitizing concepts & stitch previews.</h2>
+    <p>A sample of digitizing concepts from our studio. Preview images are illustrative — every order ships with a free sample preview of your own artwork before you pay.</p>
   </div>
   <div class="work-grid">{_work_items}</div>
 </div></div>
