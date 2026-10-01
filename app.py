@@ -77,6 +77,14 @@ header {visibility: hidden;}
 .footer {text-align: center; color: #8aa096; font-size: 0.85rem; padding: 18px 0 30px 0;}
 .fmt {display: inline-block; background: #eef7f2; color: #0b6e4f; font-weight: 700;
       border-radius: 999px; padding: 8px 20px; margin: 5px;}
+.pricetag {font-size: 2.1rem; font-weight: 800; color: #0b6e4f; margin: 10px 0 4px 0;}
+.pricecard {text-align: center;}
+.pricecard ul {text-align: left; color: #3d4a45; font-size: 0.95rem; padding-left: 22px; margin: 12px 0 0 0;}
+.pricecard li {margin-bottom: 6px;}
+.popular {border: 2px solid #0b6e4f !important; position: relative;}
+.popular-tag {position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: #0b6e4f; color: #fff; font-size: 0.75rem; font-weight: 700;
+      padding: 3px 14px; border-radius: 999px; white-space: nowrap;}
 .stExpander {border: 1px solid #e6f2ec !important; border-radius: 12px !important;}
 </style>
 """,
@@ -114,16 +122,21 @@ for col, n, l in [
     col.markdown(f'<div class="stat"><div class="n">{n}</div><div class="l">{l}</div></div>', unsafe_allow_html=True)
 
 # ---------- SERVICES ----------
-st.markdown('<h2 class="sec-title">Digitizing Services</h2>', unsafe_allow_html=True)
-st.markdown('<p class="sec-sub">Every design hand-digitized for clean, distortion-free stitching.</p>', unsafe_allow_html=True)
-s1, s2, s3, s4 = st.columns(4)
-services = [
-    ("🧢 Caps & 3D Puff", "Structured crowns, perfect puff elevation, clean small text."),
-    ("🪡 Patches", "Merrowed edge, laser-cut precision, perfect registration."),
-    ("👕 Workwear & Uniforms", "Left-chest logos, durable for industrial wash."),
-    ("🧥 Jackets & Apparel", "Back designs, sleeves, full-front — distortion-free."),
-]
-for col, (t, d) in zip([s1, s2, s3, s4], services):
+st.markdown('<h2 class="sec-title">🧵 Embroidery Digitizing Services</h2>', unsafe_allow_html=True)
+st.markdown('<p class="sec-sub">Every design hand-digitized, stitch by stitch, for clean machine-ready embroidery.</p>', unsafe_allow_html=True)
+sr1a, sr1b, sr1c = st.columns(3)
+for col, (t, d) in zip([sr1a, sr1b, sr1c], [
+    ("🧢 Cap Digitizing & 3D Puff", "Structured and unstructured caps with correct pull compensation — plus raised 3D puff foam lettering that pops."),
+    ("🪡 Embroidered Patches", "Merrowed-edge and laser-cut patches in any shape, digitized for crisp borders and clean trims."),
+    ("👕 Left Chest Logos", "Small-placement polo and workshirt logos — tiny text, tight curves, zero distortion at small sizes."),
+]):
+    col.markdown(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>', unsafe_allow_html=True)
+sr2a, sr2b, sr2c = st.columns(3)
+for col, (t, d) in zip([sr2a, sr2b, sr2c], [
+    ("🧥 Jacket Back Designs", "Large-format back designs with proper density control — no puckering, no stiff thread patches."),
+    ("✂️ Appliqué Digitizing", "Multi-fabric appliqué with clean placement lines, tack-down and cover stitches that finish smooth."),
+    ("🦺 Workwear & Uniforms", "Company uniforms, hi-vis and service apparel — consistent branding across every garment and size."),
+]):
     col.markdown(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>', unsafe_allow_html=True)
 
 # ---------- FORMATS ----------
@@ -133,6 +146,28 @@ st.markdown(
                                      ["DST", "PES", "EXP", "EMB", "JEF", "VP3"]) + "</p>",
     unsafe_allow_html=True,
 )
+
+# ---------- PRICING ----------
+st.markdown('<h2 class="sec-title">💲 Simple, Honest Pricing</h2>', unsafe_allow_html=True)
+st.markdown('<p class="sec-sub">No hidden fees. No surprises. Your first sample is always FREE.</p>', unsafe_allow_html=True)
+p1, p2, p3 = st.columns(3)
+for col, (t, price, feats, pop) in zip([p1, p2, p3], [
+    ("Simple", "$8",
+     ["Text & small logos", "Up to 5,000 stitches", "1 machine format", "6–12 hr delivery"], False),
+    ("Standard", "$15",
+     ["Most logos & designs", "Caps, left chest, polos", "All formats included", "6–12 hr delivery"], True),
+    ("Complex", "$25+",
+     ["3D puff & jacket backs", "Detailed & large designs", "All formats included", "Priority turnaround"], False),
+]):
+    tag = '<div class="popular-tag">MOST POPULAR</div>' if pop else ""
+    cls = "card pricecard popular" if pop else "card pricecard"
+    feats_html = "".join(f"<li>{f}</li>" for f in feats)
+    col.markdown(
+        f'<div class="{cls}">{tag}<h3>{t}</h3><div class="pricetag">{price}</div><ul>{feats_html}</ul></div>',
+        unsafe_allow_html=True,
+    )
+st.markdown('<p class="sec-sub">🎁 Every new client gets their <b>first sample digitized FREE</b> — sew it, check it, then decide. '
+            'Free revisions until it sews right on your machine.</p>', unsafe_allow_html=True)
 
 # ---------- HOW IT WORKS ----------
 st.markdown('<h2 class="sec-title">How It Works</h2>', unsafe_allow_html=True)
@@ -156,6 +191,10 @@ st.markdown(
 <p>Send your logo in the morning, sew it by evening. Rush jobs welcome.</p></div>
 <div class="why"><h3>🎁 First sample free</h3>
 <p>Judge our quality on your own machine before you pay a single rupee — no obligation.</p></div>
+<div class="why"><h3>🔄 Free revisions until it sews right</h3>
+<p>If anything needs adjusting, we fix it free — no arguing, no extra charges.</p></div>
+<div class="why"><h3>🛡️ Quality guarantee</h3>
+<p>Your file is hand-checked before delivery. If it doesn't sew cleanly, we redo it.</p></div>
 """,
     unsafe_allow_html=True,
 )
@@ -171,6 +210,12 @@ faqs = [
      "Standard turnaround is 6–12 hours. Tell us your deadline and we will meet it."),
     ("Is the first sample really free?",
      "Yes — completely free, no charge and no obligation. Send any logo and judge the quality yourself."),
+    ("How much does digitizing cost?",
+     "Simple designs start at $8, standard logos $15, complex designs like 3D puff or jacket backs $25+. Your first sample is always free — exact quote before we start."),
+    ("Do you offer free revisions?",
+     "Yes. We revise free until the design sews cleanly on your machine — no extra charges."),
+    ("What if I need it urgently?",
+     "Tell us your deadline. Standard delivery is 6–12 hours, and rush jobs get priority."),
 ]
 for q, a in faqs:
     with st.expander(q):
