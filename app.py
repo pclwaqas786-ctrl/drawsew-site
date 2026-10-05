@@ -6,7 +6,7 @@ import re
 from pathlib import Path as _Path
 
 st.set_page_config(
-    page_title="DrawSew — Embroidery Digitizing Service | DST, PES Files in 6-12 Hours",
+    page_title="DrawSew — Embroidery Digitizing | 3D Puff, Chenille, Patches, DST/PES in 6-12 Hrs",
     page_icon="🧵",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -49,6 +49,23 @@ header {visibility: hidden;}
 /* full-bleed sections */
 .full {width: 100vw; margin-left: calc(-50vw + 50%); padding: 72px 0;}
 .inner {max-width: 1180px; margin: 0 auto; padding: 0 28px;}
+
+/* ---------- trending strip ---------- */
+.trendstrip {background: linear-gradient(90deg, #c9973f, #e6c47c 55%, #c9973f); padding: 22px 0;}
+.trendstrip .inner {display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center;}
+.trendstrip .tl {font-family: var(--serif); font-weight: 700; color: var(--navy); font-size: 1.02rem; white-space: nowrap;}
+.tchips {display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;}
+.tchip {background: rgba(13,31,45,0.9); color: #e6c47c; font-size: 0.82rem; font-weight: 700;
+  letter-spacing: 0.6px; padding: 8px 16px; border-radius: 999px; white-space: nowrap;}
+
+/* ---------- seasonal banner ---------- */
+.season {background: radial-gradient(900px 500px at 50% 0%, #1a3a55 0%, var(--navy) 70%); color: #fff; padding: 64px 0; text-align: center;}
+.season .stag {display: inline-block; color: var(--gold-lt); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
+  border-bottom: 2px solid var(--gold); padding-bottom: 8px;}
+.season h2 {font-family: var(--serif); color: #fff; font-size: 2rem; margin: 0 0 14px 0; line-height: 1.3; max-width: 760px; margin-left: auto; margin-right: auto;}
+.season h2 .hl {color: var(--gold-lt); font-style: italic;}
+.season p {color: #c3d2de; font-size: 1.06rem; max-width: 680px; margin: 0 auto 28px auto; line-height: 1.7;}
 
 /* ---------- navbar ---------- */
 .navbar {
@@ -308,6 +325,17 @@ st.markdown(
   <div class="tstat"><div class="n">100%</div><div class="l">Hand-digitized</div></div>
   <div class="tstat"><div class="n">6</div><div class="l">Machine formats</div></div>
 </div></div>
+<div class="full trendstrip" style="padding:0;"><div class="inner" style="padding-top:22px;padding-bottom:22px;">
+  <span class="tl">🔥 Trending in digitizing right now</span>
+  <span class="tchips">
+    <span class="tchip">3D Puff Caps</span>
+    <span class="tchip">Chenille</span>
+    <span class="tchip">Mixed-Media Patches</span>
+    <span class="tchip">Appliqué Overlays</span>
+    <span class="tchip">Vector Art Conversion</span>
+    <span class="tchip">Holiday Merch</span>
+  </span>
+</div></div>
 """,
     unsafe_allow_html=True,
 )
@@ -339,7 +367,8 @@ st.markdown(
   <div class="sec-head">
     <div class="kicker">What we do</div>
     <h2>Digitizing services, built for production.</h2>
-    <p>Every design is hand-digitized stitch by stitch in Wilcom &amp; Pulse — never auto-punched —
+    <p>Every design — from 3D puff caps to chenille, mixed-media patches and vector art conversion —
+    is hand-digitized stitch by stitch in Wilcom &amp; Pulse — never auto-punched —
     so it sews cleanly on your machine, the first time.</p>
   </div>
   <div class="grid3">{_cards}</div>
@@ -391,6 +420,26 @@ st.markdown(
     <p>We deliver the exact file your machine needs — converted free between formats.</p>
   </div>
   <div class="fmtrow">{_fmts}</div>
+</div></div>
+""",
+    unsafe_allow_html=True,
+)
+
+# ----------------------------------------------------------------------------
+# Seasonal Q4 banner
+# ----------------------------------------------------------------------------
+st.markdown(
+    f"""
+<div class="full season"><div class="inner">
+  <span class="stag">🎄 Holiday order season</span>
+  <h2>Beat the <span class="hl">December rush</span> — get your digitizing slot now.</h2>
+  <p>Holiday merch, corporate uniforms and Christmas designs are already queuing up. Q4 supplier lead
+  times can stretch to 20 days — but your stitch files still land in <b style="color:#e6c47c;">6&ndash;12 hours</b>
+  when you send your artwork today.</p>
+  <div class="btnrow">
+    <a class="btn-gold" href="{MAILTO}">Lock In My 6&ndash;12 Hr Slot</a>
+    <a class="btn-outline-w" href="{WHATSAPP_LINK}" target="_blank">WhatsApp Your Logo</a>
+  </div>
 </div></div>
 """,
     unsafe_allow_html=True,
@@ -516,6 +565,10 @@ _faqs = [
      "Yes — completely free, no charge and no obligation. Send any logo and judge the quality yourself."),
     ("How much does digitizing cost?",
      "Simple designs start at $8, standard logos $15, complex designs like 3D puff or jacket backs $25+. Your first sample is always free — exact quote before we start."),
+    ("Do you offer vector art conversion?",
+     "Yes. Send your logo in any format — JPG, PNG, PDF, even a phone photo — and we clean it up into crisp vector art, then digitize it into a machine-ready file. One place, one price."),
+    ("What is a knockdown stitch, and when do I need one?",
+     "On high-pile fabrics like fleece, towels and velvet, stitches sink into the fabric and disappear. A knockdown stitch — a flat low-density underlay sewn first — presses the pile down so your design sits clean on top. We add it automatically wherever the fabric needs it."),
     ("Do you offer free revisions?",
      "Yes. We revise free until the design sews cleanly on your machine — no extra charges."),
     ("What if I need it urgently?",
