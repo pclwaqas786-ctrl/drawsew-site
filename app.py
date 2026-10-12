@@ -330,10 +330,10 @@ st.markdown(
   <span class="tchips">
     <span class="tchip">3D Puff Caps</span>
     <span class="tchip">Chenille</span>
-    <span class="tchip">Mixed-Media Patches</span>
-    <span class="tchip">Appliqué Overlays</span>
+    <span class="tchip">Halloween Patches</span>
+    <span class="tchip">Team &amp; School Apparel</span>
     <span class="tchip">Vector Art Conversion</span>
-    <span class="tchip">Holiday Merch</span>
+    <span class="tchip">Mixed-Media Patches</span>
   </span>
 </div></div>
 """,
@@ -356,6 +356,10 @@ _services = [
      "Multi-fabric appliqué with clean placement lines, tack-down and cover stitches that finish smooth."),
     ("06", "Workwear & Uniforms",
      "Company uniforms, hi-vis and service apparel — consistent branding across every garment and size."),
+    ("07", "Chenille Digitizing",
+     "Varsity jackets, school mascots and bold chenille lettering with the right underlay so loops stand tall and last."),
+    ("08", "Vector Art Conversion",
+     "Blurry JPGs become crisp, scalable vector art — cleaned up and converted, then digitized into a machine-ready file."),
 ]
 _cards = "".join(
     f'<div class="svc"><div class="idx">{i}</div><h3>{t}</h3><p>{d}</p></div>'
@@ -431,10 +435,11 @@ st.markdown(
 st.markdown(
     f"""
 <div class="full season"><div class="inner">
-  <span class="stag">🎄 Holiday order season</span>
-  <h2>Beat the <span class="hl">December rush</span> — get your digitizing slot now.</h2>
-  <p>Holiday merch, corporate uniforms and Christmas designs are already queuing up. Q4 supplier lead
-  times can stretch to 20 days — but your stitch files still land in <b style="color:#e6c47c;">6&ndash;12 hours</b>
+  <span class="stag">🎃 Spooky season &amp; holiday rush</span>
+  <h2>Halloween patches <span class="hl">now</span> — Christmas merch right behind.</h2>
+  <p>Halloween 3D puff and spooky-season patches are in production this week, and Christmas merch,
+  corporate uniforms and holiday designs are already queuing up. Q4 supplier lead times can stretch to
+  20 days — but your stitch files still land in <b style="color:#e6c47c;">6&ndash;12 hours</b>
   when you send your artwork today.</p>
   <div class="btnrow">
     <a class="btn-gold" href="{MAILTO}">Lock In My 6&ndash;12 Hr Slot</a>
