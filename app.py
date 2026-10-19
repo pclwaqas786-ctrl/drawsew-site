@@ -330,7 +330,7 @@ st.markdown(
   <span class="tchips">
     <span class="tchip">3D Puff Caps</span>
     <span class="tchip">Chenille</span>
-    <span class="tchip">Halloween Patches</span>
+    <span class="tchip">Christmas &amp; Holiday Merch</span>
     <span class="tchip">Team &amp; School Apparel</span>
     <span class="tchip">Vector Art Conversion</span>
     <span class="tchip">Mixed-Media Patches</span>
@@ -435,11 +435,11 @@ st.markdown(
 st.markdown(
     f"""
 <div class="full season"><div class="inner">
-  <span class="stag">🎃 Spooky season &amp; holiday rush</span>
-  <h2>Halloween patches <span class="hl">now</span> — Christmas merch right behind.</h2>
-  <p>Halloween 3D puff and spooky-season patches are in production this week, and Christmas merch,
-  corporate uniforms and holiday designs are already queuing up. Q4 supplier lead times can stretch to
-  20 days — but your stitch files still land in <b style="color:#e6c47c;">6&ndash;12 hours</b>
+  <span class="stag">🎄 Holiday merch rush</span>
+  <h2>Christmas designs <span class="hl">in production now</span> — beat the holiday rush.</h2>
+  <p>Halloween patches get their final call this week — Christmas caps, corporate holiday uniforms and
+  seasonal merch are already queuing up. Supplier lead times can stretch to 20 days in Q4 — but your
+  stitch files still land in <b style="color:#e6c47c;">6&ndash;12 hours</b>
   when you send your artwork today.</p>
   <div class="btnrow">
     <a class="btn-gold" href="{MAILTO}">Lock In My 6&ndash;12 Hr Slot</a>
@@ -572,6 +572,8 @@ _faqs = [
      "Simple designs start at $8, standard logos $15, complex designs like 3D puff or jacket backs $25+. Your first sample is always free — exact quote before we start."),
     ("Do you offer vector art conversion?",
      "Yes. Send your logo in any format — JPG, PNG, PDF, even a phone photo — and we clean it up into crisp vector art, then digitize it into a machine-ready file. One place, one price."),
+    ("How should I prepare my artwork for digitizing?",
+     "Five things that cut your turnaround time in half: send the highest-resolution logo file you have (a vector AI, EPS or SVG is ideal — but any JPG, PNG or phone photo works); tell us the finished size in inches and the placement (left chest, cap, jacket back); name your machine format (DST, PES, EXP and more); and share thread colors or Pantone/hex codes if you have them. We handle the rest."),
     ("What is a knockdown stitch, and when do I need one?",
      "On high-pile fabrics like fleece, towels and velvet, stitches sink into the fabric and disappear. A knockdown stitch — a flat low-density underlay sewn first — presses the pile down so your design sits clean on top. We add it automatically wherever the fabric needs it."),
     ("Do you offer free revisions?",
