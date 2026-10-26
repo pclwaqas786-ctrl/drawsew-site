@@ -331,7 +331,7 @@ st.markdown(
     <span class="tchip">3D Puff Caps</span>
     <span class="tchip">Chenille</span>
     <span class="tchip">Christmas &amp; Holiday Merch</span>
-    <span class="tchip">Team &amp; School Apparel</span>
+    <span class="tchip">Winter Beanies &amp; Fleece</span>
     <span class="tchip">Vector Art Conversion</span>
     <span class="tchip">Mixed-Media Patches</span>
   </span>
@@ -437,10 +437,10 @@ st.markdown(
 <div class="full season"><div class="inner">
   <span class="stag">🎄 Holiday merch rush</span>
   <h2>Christmas designs <span class="hl">in production now</span> — beat the holiday rush.</h2>
-  <p>Halloween patches get their final call this week — Christmas caps, corporate holiday uniforms and
-  seasonal merch are already queuing up. Supplier lead times can stretch to 20 days in Q4 — but your
-  stitch files still land in <b style="color:#e6c47c;">6&ndash;12 hours</b>
-  when you send your artwork today.</p>
+  <p>November is the month to send holiday artwork: US shops stop taking personalized Christmas orders
+  in early December, and USPS Christmas send-by dates run December 17&ndash;19. Promo lead times are
+  stretching to around 4 weeks in the holiday rush — but your stitch files still land in
+  <b style="color:#e6c47c;">6&ndash;12 hours</b> when you send your artwork today.</p>
   <div class="btnrow">
     <a class="btn-gold" href="{MAILTO}">Lock In My 6&ndash;12 Hr Slot</a>
     <a class="btn-outline-w" href="{WHATSAPP_LINK}" target="_blank">WhatsApp Your Logo</a>
@@ -574,6 +574,10 @@ _faqs = [
      "Yes. Send your logo in any format — JPG, PNG, PDF, even a phone photo — and we clean it up into crisp vector art, then digitize it into a machine-ready file. One place, one price."),
     ("How should I prepare my artwork for digitizing?",
      "Five things that cut your turnaround time in half: send the highest-resolution logo file you have (a vector AI, EPS or SVG is ideal — but any JPG, PNG or phone photo works); tell us the finished size in inches and the placement (left chest, cap, jacket back); name your machine format (DST, PES, EXP and more); and share thread colors or Pantone/hex codes if you have them. We handle the rest."),
+    ("When should I order Christmas digitizing?",
+     "In November, if you can. US shops stop taking personalized Christmas orders in early December, USPS Christmas send-by dates for the lower 48 states run December 17–19, and promo production lead times stretch to around 4 weeks in the holiday rush. Your stitch file itself still arrives in 6–12 hours — but ordering early leaves time for a test sew-out, production and shipping."),
+    ("Do I need a different file for caps vs flat garments?",
+     "Yes. A cap file is built differently from a flat file — caps need different pull compensation, underlay and stitch sequencing because the design sews on a curve. We digitize a separate version for caps and for flat garments, so the same logo sews cleanly on both a structured cap and a polo."),
     ("What is a knockdown stitch, and when do I need one?",
      "On high-pile fabrics like fleece, towels and velvet, stitches sink into the fabric and disappear. A knockdown stitch — a flat low-density underlay sewn first — presses the pile down so your design sits clean on top. We add it automatically wherever the fabric needs it."),
     ("Do you offer free revisions?",
