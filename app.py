@@ -333,7 +333,7 @@ st.markdown(
     <span class="tchip">Christmas &amp; Holiday Merch</span>
     <span class="tchip">Winter Beanies &amp; Fleece</span>
     <span class="tchip">Vector Art Conversion</span>
-    <span class="tchip">Mixed-Media Patches</span>
+    <span class="tchip">Chest Puff Logos</span>
   </span>
 </div></div>
 """,
@@ -348,8 +348,8 @@ _services = [
      "Structured and unstructured caps with correct pull compensation — plus raised 3D puff foam lettering that pops."),
     ("02", "Embroidered Patches",
      "Merrowed-edge and laser-cut patches in any shape, digitized for crisp borders and clean trims."),
-    ("03", "Left Chest Logos",
-     "Small-placement polo and workshirt logos — tiny text, tight curves, zero distortion at small sizes."),
+    ("03", "Left Chest Logos & Chest Puff",
+     "Small-placement polo and workshirt logos — tiny text, tight curves, zero distortion at small sizes — plus 3D chest puff, engineered so the foam stays raised and edges stay sharp where many shops turn the job down."),
     ("04", "Jacket Back Designs",
      "Large-format back designs with proper density control — no puckering, no stiff thread patches."),
     ("05", "Appliqué Digitizing",
@@ -371,7 +371,7 @@ st.markdown(
   <div class="sec-head">
     <div class="kicker">What we do</div>
     <h2>Digitizing services, built for production.</h2>
-    <p>Every design — from 3D puff caps to chenille, mixed-media patches and vector art conversion —
+    <p>Every design — from 3D puff caps and chest puff to chenille, mixed-media patches and vector art conversion —
     is hand-digitized stitch by stitch in Wilcom &amp; Pulse — never auto-punched —
     so it sews cleanly on your machine, the first time.</p>
   </div>
@@ -437,7 +437,8 @@ st.markdown(
 <div class="full season"><div class="inner">
   <span class="stag">🎄 Holiday merch rush</span>
   <h2>Christmas designs <span class="hl">in production now</span> — beat the holiday rush.</h2>
-  <p>November is the month to send holiday artwork: US shops stop taking personalized Christmas orders
+  <p>November is the month to send holiday artwork: corporate holiday-gift programs are already setting
+  November 15 cutoffs, US shops stop taking personalized Christmas orders
   in early December, and USPS Christmas send-by dates run December 17&ndash;19. Promo lead times are
   stretching to around 4 weeks in the holiday rush — but your stitch files still land in
   <b style="color:#e6c47c;">6&ndash;12 hours</b> when you send your artwork today.</p>
@@ -575,7 +576,9 @@ _faqs = [
     ("How should I prepare my artwork for digitizing?",
      "Five things that cut your turnaround time in half: send the highest-resolution logo file you have (a vector AI, EPS or SVG is ideal — but any JPG, PNG or phone photo works); tell us the finished size in inches and the placement (left chest, cap, jacket back); name your machine format (DST, PES, EXP and more); and share thread colors or Pantone/hex codes if you have them. We handle the rest."),
     ("When should I order Christmas digitizing?",
-     "In November, if you can. US shops stop taking personalized Christmas orders in early December, USPS Christmas send-by dates for the lower 48 states run December 17–19, and promo production lead times stretch to around 4 weeks in the holiday rush. Your stitch file itself still arrives in 6–12 hours — but ordering early leaves time for a test sew-out, production and shipping."),
+     "In November, if you can. Corporate holiday-gift programs are already setting November 15 cutoffs, US shops stop taking personalized Christmas orders in early December, USPS Christmas send-by dates for the lower 48 states run December 17–19, and promo production lead times stretch to around 4 weeks in the holiday rush. Your stitch file itself still arrives in 6–12 hours — but ordering early leaves time for a test sew-out, production and shipping."),
+    ("Can you digitize 3D puff for a left-chest logo?",
+     "Yes — chest puff is one of this season's most requested looks, and it is also the one many shops turn down because the foam gets crushed and the edges go messy on a small placement. We build the chest-puff file for that garment specifically — satin coverage, density and stitch direction set so the foam stays raised and the edges stay sharp — and, as always, your first sample is free so you can sew it before you pay."),
     ("Do I need a different file for caps vs flat garments?",
      "Yes. A cap file is built differently from a flat file — caps need different pull compensation, underlay and stitch sequencing because the design sews on a curve. We digitize a separate version for caps and for flat garments, so the same logo sews cleanly on both a structured cap and a polo."),
     ("What is a knockdown stitch, and when do I need one?",
