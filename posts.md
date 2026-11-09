@@ -1,4 +1,4 @@
-# DrawSew — All 40 Posts (Complete Text)
+# DrawSew — All 41 Posts (Complete Text)
 27 Sep 2026 | Roz 1 post, shaam 7:00 PM PKT | Image ka naam = post number (post-01.jpg = Post 1)
 Images ZIP: drawsew-40posts-images.zip (15 ready, baqi jald)
 
@@ -660,3 +660,21 @@ Kal isi waqt tumhari file tumhare inbox me hogi.
 WhatsApp +92 332 3167915 — let's work. 🤝
 
 #embroiderydigitizing #freesample #letswork #drawsew
+
+---
+
+## POST 41 — Mon 9 Nov
+**Image:** post-41.jpg ⏳
+
+3D puff needs its own file. 🧵
+
+A flat design stitched over foam leaves gaps and loose edges.
+Puff files use denser satin columns and closed ends so the foam stays covered.
+
+Same logo, two different files — flat and puff are never interchangeable.
+
+Send your logo — first sample free.
+
+WhatsApp +92 332 3167915
+
+#embroidery #3dpuff #digitizing #drawsew

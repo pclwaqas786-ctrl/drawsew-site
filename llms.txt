@@ -9,6 +9,7 @@
 - Logo digitizing for embroidery machines (DST, PES and other major formats)
 - Caps & 3D Puff digitizing (structured crowns, puff elevation, small text)
 - Patches (merrowed edge, precise registration)
+- Metallic thread digitizing (adjusted density and underlay for metallic thread)
 - Workwear & uniforms (left-chest logos, durable for industrial wash)
 - Jackets & apparel (back designs, sleeves, full-front)
 
